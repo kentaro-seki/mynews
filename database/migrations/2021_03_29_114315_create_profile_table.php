@@ -13,12 +13,12 @@ class CreateProfileTable extends Migration
      */
     public function up()
     {
-        Schema::create('profile', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('名前(name)'); // ニュースのタイトルを保存するカラム
-            $table->string('性別(gender)');  // ニュースの本文を保存するカラム
-            $table->string('趣味(hobby)');
-            $table->string('自己紹介(introduction)')->nullable();  // 画像のパスを保存するカラム
+            $table->string('name'); // ニュースのタイトルを保存するカラム
+            $table->string('gender');  // ニュースの本文を保存するカラム
+            $table->string('hobby');
+            $table->string('introduction')->nullable();  // 画像のパスを保存するカラム
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateProfileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profile');
+        Schema::dropIfExists('profiles');
     }
 }
