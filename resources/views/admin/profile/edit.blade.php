@@ -36,9 +36,9 @@
                         <label class="col-md-2">自己紹介(introduction)</label>
                         <div class="col-md-10">
                         <input type="text" class="form-control" name="introduction" value="{{ $profile_form->introduction }}">
-                        
-                        </div>
                          <input type="hidden" name="id" value="{{ $profile_form->id }}">
+                         
+                         
                             {{ csrf_field() }}
                             <input type="submit" class="btn btn-primary" value="更新">
                         </div>
@@ -52,7 +52,7 @@
                                 @foreach ($profile_form->histories as $history)
                                     <li class="list-group-item">{{ $history->edited_at }}</li>
                                 @endforeach
-            @endif
+                            @endif
                         </ul>
                     </div>
                 </div>
