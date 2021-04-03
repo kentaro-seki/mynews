@@ -23,6 +23,12 @@ class ProfileController extends Controller
         $this->validate($request, Profile::$rules);
               $profile = new Profile;
       $form = $request->all();
+      if (isset($form['image'])) {
+        $path = $request->file('image')->store('public/image');
+        $profile->image_path = basename($path);
+      } else {
+          $news->image_path = null;
+      }
       unset($form['_token']);
       unset($form['image']);
       $profile->fill($form);
