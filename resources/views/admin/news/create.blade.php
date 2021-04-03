@@ -6,6 +6,7 @@
 
 {{-- admin.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
+<p>課題デプロイ</p>
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
